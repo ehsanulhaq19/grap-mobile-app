@@ -1,0 +1,227 @@
+GRAP - Code Structure, Design Patterns, and Practices
+=======================================================
+
+Overview
+--------
+GRAP is a Flutter marketing studio application for AI-assisted content workflows.
+The app uses feature-first clean architecture with Riverpod dependency injection.
+
+Supported Platforms
+-------------------
+Mobile only:
+
+  android/    Android native shell (APK/AAB builds)
+  ios/        iOS native shell (IPA builds)
+
+Platform folders for web, desktop, and Linux were removed. All shared app code
+remains in lib/.
+
+-------------------
+
+lib/
+  main.dart                          Application entry point
+  app.dart                           Root widget and MaterialApp setup
+
+  core/                              Shared, feature-agnostic infrastructure
+    constants/
+      app_constants.dart             App name, routes, branding constants
+    routing/
+      app_router.dart                Central GoRouter configuration
+    theme/
+      app_colors.dart                Color tokens
+      app_spacing.dart               Spacing and radius tokens
+      app_typography.dart            Text styles
+      app_theme.dart                 ThemeData assembly
+    widgets/
+      icon_action_button.dart        Reusable icon button primitive
+      grap_logo.dart                 Brand logo lockup
+      glass_app_bar.dart             Top navigation bar
+      app_bottom_nav.dart            Bottom tab navigation
+      credits_badge.dart             Credit balance chip
+      glass_card.dart                Glassmorphism card container
+      app_text_field.dart            Form fields and chip rows
+      ambient_background.dart        Auth screen backdrop
+      ai_gradient_button.dart        Primary CTA button
+
+  features/
+    auth/                            Authentication feature module
+      domain/
+        entities/
+          auth_session.dart          Signed-in session model
+          auth_credentials.dart      Sign-in / sign-up input
+        repositories/
+          auth_repository.dart       Auth contract
+        usecases/
+          sign_in.dart               Establish session
+          sign_up.dart               Register and sign in
+          sign_out.dart              Clear session
+          watch_auth_session.dart    Reactive session stream
+      data/
+        datasources/
+          auth_local_datasource.dart Mock in-memory auth store
+        repositories/
+          auth_repository_impl.dart  AuthRepository implementation
+      presentation/
+        providers/
+          auth_providers.dart        Riverpod dependency graph
+        pages/
+          login_page.dart
+          sign_up_page.dart
+
+    studio/                          Marketing studio feature module
+      domain/
+        entities/
+          user_profile.dart          Profile display model
+          credit_balance.dart        Billing credits model
+        repositories/
+          user_repository.dart       Profile contract
+          billing_repository.dart    Credits contract
+        usecases/
+          get_user_profile.dart
+          watch_user_profile.dart
+          get_credit_balance.dart
+          watch_credit_balance.dart
+      data/
+        datasources/
+          user_local_datasource.dart Mock profile store
+          billing_local_datasource.dart Mock credits store
+        repositories/
+          user_repository_impl.dart
+          billing_repository_impl.dart
+      presentation/
+        providers/
+          studio_providers.dart      User and billing providers
+        shell/
+          main_shell.dart            Bottom-nav scaffold wrapper
+        widgets/
+          settings_toggle_row.dart   Profile preference row
+          settings_link.dart         Profile navigation row
+        pages/
+          home_page.dart
+          history_page.dart
+          social_links_page.dart
+          profile_settings_page.dart
+          content_generation_page.dart
+          image_generation_page.dart
+          post_generation_page.dart
+          usage_billing_page.dart
+          subscriptions_page.dart
+          free_mode_page.dart
+
+Future features (e.g. ad_generation, templates, export) should follow the same
+layout under lib/features/<feature_name>/.
+
+
+Design Patterns
+---------------
+
+1. Feature-First Modular Architecture
+   - Code is grouped by business capability, not by technical layer globally.
+   - Each feature owns its domain, data, and presentation layers.
+   - Enables independent growth of studio modules without cross-feature
+     coupling.
+
+2. Clean Architecture (Layered per Feature)
+   - Domain: entities, repository interfaces, use cases.
+   - Data: datasource implementations and repository implementations.
+   - Presentation: pages, widgets, and Riverpod providers.
+   - Dependency rule: presentation -> domain <- data. Domain never depends on
+     Flutter or infrastructure.
+
+3. Repository Pattern
+   - AuthRepository, UserRepository, and BillingRepository abstract persistence.
+   - Presentation and use cases depend on interfaces, not storage details.
+   - Mock local datasources can be replaced with API clients later.
+
+4. Use Case Pattern
+   - Each business action is a small callable class (SignIn, SignOut,
+     WatchCreditBalance).
+   - Keeps widgets thin and centralizes orchestration for validation and
+     permissions later.
+
+5. Dependency Injection via Riverpod
+   - Providers construct and wire dependencies at the composition root.
+   - Testable: providers can be overridden in widget and unit tests.
+   - Lifecycle managed with ref.onDispose for stream controllers.
+
+6. Unidirectional Data Flow
+   - UI triggers use cases through providers.
+   - Repositories emit state via Stream<T>.
+   - UI rebuilds from StreamProvider values (userProfileProvider,
+     creditBalanceProvider, authSessionProvider).
+
+7. Declarative Routing (GoRouter)
+   - Routes defined centrally in app_router.dart.
+   - StatefulShellRoute powers bottom navigation tabs.
+
+8. Composition over Inheritance
+   - Screens compose smaller widgets (SettingsLink, GlassCard,
+     IconActionButton) instead of monolithic page classes.
+
+
+State Management
+----------------
+
+- Package: flutter_riverpod
+- StreamProvider exposes reactive profile, credits, and auth session to the UI.
+- Provider registers use cases and repository implementations.
+- Widgets use ConsumerWidget / ConsumerStatefulWidget to read state and dispatch
+  actions.
+- Prefer providers over setState for data sourced from repositories; local UI
+  toggles may still use StatefulWidget state.
+
+
+Code Practices
+--------------
+
+Naming
+  - Files: snake_case
+  - Classes: PascalCase
+  - Providers: <name>Provider suffix
+
+Widget Guidelines
+  - Prefer StatelessWidget and ConsumerWidget.
+  - Extract reusable UI into core/widgets or feature/presentation/widgets.
+  - Keep pages focused on layout and wiring, not business logic.
+
+Domain Guidelines
+  - No Flutter imports in domain layer.
+  - Repository interfaces live in domain; implementations in data.
+  - One use case per user-facing action.
+
+Testing Strategy
+  - Unit test use cases and repositories with mocked datasources.
+  - Widget tests wrap the app in ProviderScope.
+  - Override providers in tests to isolate layers.
+
+Comments
+  - No inline comments for obvious code.
+  - Comments reserved for complex logic or public function contracts.
+
+
+Scalability Path for Marketing AD Generation
+--------------------------------------------
+
+Recommended future modules:
+
+  features/
+    ad_generation/
+      domain/       Campaign rules, template selection, copy constraints
+      data/         API clients, local drafts, asset storage
+      presentation/ Wizards, editors, previews
+    templates/
+    assets/
+    export/
+
+Shared concerns remain in core/ (theme, routing, networking client, logging).
+Cross-feature contracts can move to a shared domain/ folder only when truly
+common; prefer feature isolation until duplication is proven.
+
+
+Run Instructions
+----------------
+
+  flutter pub get
+  flutter run -d android
+  flutter run -d ios
+  flutter test

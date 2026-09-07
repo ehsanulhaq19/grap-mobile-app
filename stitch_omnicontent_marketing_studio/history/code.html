@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>GeniusAI - History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#fffbff",
+                      "on-tertiary-fixed-variant": "#85145a",
+                      "surface-tint": "#6d3bd7",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#0b1c30",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#ffd8e7",
+                      "surface-dim": "#cbdbf5",
+                      "primary": "#6b38d4",
+                      "surface-bright": "#f8f9ff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "primary-fixed": "#e9ddff",
+                      "surface-container": "#e5eeff",
+                      "on-surface": "#0b1c30",
+                      "tertiary-container": "#c0488a",
+                      "on-tertiary-fixed": "#3d0026",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-primary-fixed-variant": "#5516be",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#ffafd3",
+                      "secondary-fixed-dim": "#4edea3",
+                      "error": "#ba1a1a",
+                      "surface": "#f8f9ff",
+                      "outline-variant": "#cbc3d7",
+                      "on-secondary-container": "#00714d",
+                      "secondary": "#006c49",
+                      "surface-container-high": "#dce9ff",
+                      "primary-fixed-dim": "#d0bcff",
+                      "surface-container-low": "#eff4ff",
+                      "tertiary": "#a12e70",
+                      "primary-container": "#8455ef",
+                      "on-primary-fixed": "#23005c",
+                      "on-secondary-fixed": "#002113",
+                      "background": "#f8f9ff",
+                      "on-tertiary-container": "#fffbff",
+                      "error-container": "#ffdad6",
+                      "on-surface-variant": "#494454",
+                      "on-error": "#ffffff",
+                      "surface-container-highest": "#d3e4fe",
+                      "surface-variant": "#d3e4fe",
+                      "inverse-surface": "#213145",
+                      "on-error-container": "#93000a",
+                      "outline": "#7b7486",
+                      "secondary-container": "#6cf8bb",
+                      "inverse-primary": "#d0bcff",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#eaf1ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "lg": "24px",
+                      "xs": "8px",
+                      "md": "16px",
+                      "container-margin": "20px",
+                      "base": "4px",
+                      "sm": "12px",
+                      "gutter": "16px",
+                      "xxl": "48px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-xl": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(100, 116, 139, 0.04);
+        }
+        
+        .safe-area-pt { padding-top: env(safe-area-inset-top, 0px); }
+        .safe-area-pb { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-sm docked full-width top-0 sticky z-40 safe-area-pt">
+<div class="flex justify-between items-center w-full px-container-margin py-md">
+<!-- Leading Avatar -->
+<button class="w-10 h-10 rounded-full overflow-hidden hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary-container">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional headshot of a young marketing executive smiling warmly, soft bright lighting, modern office background slightly blurred, signifying a high-end sophisticated AI user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt-zzbiC3R_OGusECgak5cmnlxKAFZdVYIe3bjQZkjJUmF7hZ-cQNCeknmLtQnQgAIY3tPoCDlD4uWTwswJmF-PdrnNAddur7ThG8JxmXTzsDv8RyPuqcAHtQPHTZ-WJ0gk5wrgyewaqiDDoAnja6nw5oR7gHDL39EC2ppVl1pIUlolXwPEjOIK41Fm-icg0zaryy-nozla8W8pvTItQJAkMl1jke3L3xrIcbkgYF_QMVntuPlUQDrAQ"/>
+</button>
+<!-- Headline / Brand -->
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed">GeniusAI</h1>
+<!-- Trailing Action -->
+<button class="px-sm py-xs bg-primary-container/10 text-primary font-label-md text-label-md rounded-full flex items-center gap-1 hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-150">
+<span class="text-sm">⚡</span>
+<span>250 Credits</span>
+</button>
+</div>
+<!-- Desktop Navigation (Hidden on Mobile) -->
+<nav class="hidden md:flex justify-center gap-lg pb-sm border-b border-outline-variant/20 px-container-margin">
+<a class="text-label-md font-label-md text-on-surface-variant/70 hover:opacity-80 transition-opacity flex items-center gap-xs pb-xs" href="#">
+<span class="material-symbols-outlined text-[20px]">home</span>
+                Home
+            </a>
+<a class="text-label-md font-label-md text-on-surface dark:text-on-surface-variant border-b-2 border-primary flex items-center gap-xs pb-xs" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">history</span>
+                History
+            </a>
+<a class="text-label-md font-label-md text-on-surface-variant/70 hover:opacity-80 transition-opacity flex items-center gap-xs pb-xs" href="#">
+<span class="material-symbols-outlined text-[20px]">share_reviews</span>
+                Social
+            </a>
+<a class="text-label-md font-label-md text-on-surface-variant/70 hover:opacity-80 transition-opacity flex items-center gap-xs pb-xs" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+                Profile
+            </a>
+</nav>
+</header>
+<!-- Main Content -->
+<main class="w-full max-w-5xl mx-auto px-container-margin pt-lg pb-xxl flex flex-col gap-xl">
+<!-- Page Header & Filters -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface mb-xs">Your History</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Review and manage your previously generated content.</p>
+</div>
+<div class="flex gap-sm overflow-x-auto pb-1 scrollbar-hide snap-x">
+<button class="snap-start flex-shrink-0 px-4 py-2 rounded-full bg-primary-container/10 text-primary font-label-md text-label-md border border-primary/20">All Types</button>
+<button class="snap-start flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors">Images</button>
+<button class="snap-start flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors">Copywriting</button>
+<button class="snap-start flex-shrink-0 px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors">Campaigns</button>
+</div>
+</div>
+<!-- History Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md md:gap-lg">
+<!-- Item 1: Large Image Gen -->
+<article class="glass-card rounded-xl overflow-hidden group cursor-pointer hover:shadow-md transition-all duration-300 active:scale-[0.98] md:col-span-2 lg:col-span-2 row-span-2 flex flex-col">
+<div class="relative w-full h-64 md:h-80 bg-surface-variant overflow-hidden">
+<img alt="Generated smart home image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A highly detailed, photorealistic render of a futuristic smart home interior at sunset. Warm golden hour light pours through large floor-to-ceiling glass windows, illuminating sleek minimalist furniture. The color palette features warm golds, deep slate greys, and crisp whites. A subtle holographic interface floats near a kitchen island, representing AI integration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUHpD61fxO2AdSrGPg8OxgwTSbPR0aH_L_Nr1G86rMJTVaBzBPPX3gJu1iVUcvjqoTbN9lpYy0lUgO9uuU9CcgDTA29irvnaKRARxWrFE-ony79AoWsxT871hiOhzyHUbj8eVLSpl12tFDzlfN78WK00qlg3IMwB56c3cK025DB5iTIqOaEnLWbPDgoWHmELGbHRDptrKN4L7SqVUh8nZYgAPlgtvHQMoSdrOa-RrnvH11xUsbtSDn6w"/>
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur-md px-sm py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">image</span>
+<span class="text-label-sm font-label-sm text-on-surface">Image</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow justify-between gap-md bg-surface-lowest">
+<div>
+<div class="flex items-center gap-xs mb-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-label-sm font-label-sm">Today, 2:45 PM</span>
+</div>
+<h3 class="text-body-lg font-body-lg text-on-surface font-semibold line-clamp-2">"Futuristic Smart Home Interior at Sunset"</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-xs line-clamp-2">Photorealistic render, golden hour lighting, minimalist furniture, subtle AI interface elements...</p>
+</div>
+<div class="flex justify-between items-center pt-sm border-t border-outline-variant/30">
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container rounded-md text-[10px] font-label-sm text-on-surface-variant">4K Resolution</span>
+<span class="px-2 py-1 bg-surface-container rounded-md text-[10px] font-label-sm text-on-surface-variant">V5 Engine</span>
+</div>
+<button class="text-primary hover:text-primary-container p-1 rounded-full hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 2: Copywriting -->
+<article class="glass-card rounded-xl p-md flex flex-col justify-between group cursor-pointer hover:shadow-md transition-all duration-300 active:scale-[0.98]">
+<div>
+<div class="flex justify-between items-start mb-sm">
+<div class="bg-secondary/10 px-sm py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">edit_document</span>
+<span class="text-label-sm font-label-sm text-secondary">Copy</span>
+</div>
+<button class="text-outline-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex items-center gap-xs mb-xs text-on-surface-variant">
+<span class="text-label-sm font-label-sm">Yesterday, 10:15 AM</span>
+</div>
+<h3 class="text-body-md font-body-md text-on-surface font-semibold mb-xs">Spring Collection Email Sequence</h3>
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/20 mb-sm">
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-4 italic">"Subject: Bloom into the new season 🌸... Hey there, ready to refresh your wardrobe? Our new spring collection just dropped, featuring lightweight fabrics and vibrant pastel tones perfect for..."</p>
+</div>
+</div>
+<div class="flex justify-between items-center mt-auto pt-sm">
+<span class="text-label-sm font-label-sm text-on-surface-variant">3 Variants</span>
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm flex items-center gap-1">
+                        View <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Item 3: Campaign Plan -->
+<article class="glass-card rounded-xl p-md flex flex-col justify-between group cursor-pointer hover:shadow-md transition-all duration-300 active:scale-[0.98]">
+<div>
+<div class="flex justify-between items-start mb-sm">
+<div class="bg-tertiary/10 px-sm py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">lightbulb</span>
+<span class="text-label-sm font-label-sm text-tertiary">Strategy</span>
+</div>
+</div>
+<div class="flex items-center gap-xs mb-xs text-on-surface-variant">
+<span class="text-label-sm font-label-sm">Oct 24, 4:30 PM</span>
+</div>
+<h3 class="text-body-md font-body-md text-on-surface font-semibold mb-sm">Q4 Holiday Marketing Plan</h3>
+<ul class="space-y-2 mb-sm">
+<li class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary mt-[2px]">check_circle</span>
+<span>Target Audience Defined</span>
+</li>
+<li class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary mt-[2px]">check_circle</span>
+<span>Budget Allocation Proposed</span>
+</li>
+<li class="flex items-start gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline-variant mt-[2px]">pending</span>
+<span>Content Calendar Draft</span>
+</li>
+</ul>
+</div>
+<div class="flex justify-end items-center mt-auto pt-sm border-t border-outline-variant/30">
+<button class="px-sm py-xs bg-surface-container rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span> Open Draft
+                    </button>
+</div>
+</article>
+<!-- Item 4: Smaller Image Gen -->
+<article class="glass-card rounded-xl overflow-hidden group cursor-pointer hover:shadow-md transition-all duration-300 active:scale-[0.98] flex flex-col">
+<div class="relative w-full h-40 bg-surface-variant overflow-hidden">
+<img alt="Generated skincare product image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A clean, modern flat-lay composition of high-end skincare products on a pastel pink background. Minimalist branding, soft diffused studio lighting creating gentle shadows. The mood is calm, luxurious, and pristine, appealing to a sophisticated demographic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz1f4b0d9RhKCOC1ENW99OoAhn3MbmL21Jt7MJ76lAlTl-aixS3hAKae6nOGmZTABb4v-5aPRR4ZJL7EeQfehEpLe0z-s2VcZHlGNVck8w0xcg90pfP_5fvhCZvL_rSYGp6pdLCDjcxEU5I7qB7qYVqmz6pYnieSit3q4zwEJtxsTeuxu5nn4FP4WIgrNnE3IDHAowQQv6Q6iNloPRbmrufmaq1LjWIdWvHIdb0B6XkZIDwBrKi_ipAA"/>
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur-md px-2 py-0.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">image</span>
+</div>
+</div>
+<div class="p-sm flex flex-col flex-grow justify-between bg-surface-lowest">
+<div>
+<p class="text-[10px] font-label-sm text-on-surface-variant mb-1">Oct 22, 11:00 AM</p>
+<h3 class="text-body-sm font-body-sm text-on-surface font-semibold line-clamp-2">Skincare Product Flat-lay</h3>
+</div>
+</div>
+</article>
+</div>
+<!-- Load More -->
+<div class="flex justify-center mt-md">
+<button class="px-lg py-sm rounded-full border border-outline-variant/50 text-primary font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center gap-2">
+                Load Older History
+                <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-inverse-surface border-t border-outline-variant/30 shadow-[0_-4px_20px_rgba(100,116,139,0.04)] safe-area-pb">
+<div class="flex justify-around items-center px-4 pt-2 pb-2">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim group" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1 group-active:scale-90 transition-transform duration-200">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<!-- History (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container/10 dark:bg-primary-container/20 text-primary dark:text-primary-fixed-dim rounded-xl px-4 py-1 group active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="text-label-sm font-label-sm">History</span>
+</a>
+<!-- Social -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim group" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1 group-active:scale-90 transition-transform duration-200">share_reviews</span>
+<span class="text-label-sm font-label-sm">Social</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim group" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1 group-active:scale-90 transition-transform duration-200">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>
